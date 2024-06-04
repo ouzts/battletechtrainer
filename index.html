@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Emscripten-Generated Code</title>
+</head>
+<body>
+
+<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+<button onclick="callEmscriptenFunction()">Call Emscripten Function</button>
+
+<script type='text/javascript'>
+var Module = {
+canvas: (() => {
+				 var canvas = document.getElementById('canvas');
+				 canvas.addEventListener("webglcontextlost", (e) => { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+				 return canvas;
+				 })(),
+};
+
+function callEmscriptenFunction() {
+	    // Call your Emscripten function here
+	    // For example, if your Emscripten function is called 'myFunction', you would call it like this:
+	    Module._myFunction();
+}
+
+</script>
+
+<script async type="text/javascript" src="hex_grid.js">  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+emcc hex_grid.cpp -o hex_grid.js -s USE_WEBGL2=1
