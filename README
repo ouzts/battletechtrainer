@@ -1,1 +1,1 @@
-emcc hex_grid.cpp -o hex_grid.js -s USE_WEBGL2=1
+emcc fractional_hex.cpp hex_grid.cpp utils.cpp hex.cpp -o hex_grid.js -s USE_WEBGL2=1 -std=c++20
